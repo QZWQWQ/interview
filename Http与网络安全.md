@@ -124,7 +124,9 @@ webSocket.onmessage=function(event){
 CSRF通常从第三方网站发起，被攻击的网站无法防止攻击发生，只能通过增强自己网站针对CSRF的防护能力来提升安全性，防止`csrf`常用方案如下：
 
 - 阻止不明外域的访问：同源检测 + Samesite Cookie
-- 提交时要求附加本域才能获取的信息：CSRF Token + 双重Cookie验证
+- 尽量使用post请求
+- 验证refer
+- 提交时要求附加本域才能获取的信息：anti CSRF Token + 双重Cookie验证
 
 详情参考：https://tech.meituan.com/2018/10/11/fe-security-csrf.html
 
